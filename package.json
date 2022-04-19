@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Mariia-MM/Chat-Demo#readme",
   "dependencies": {
-    "materialize-css": "^1.0.0-rc.2"
+    "@supabase/supabase-js": "^1.35.0",
+    "materialize-css": "^1.0.0-rc.2",
+    "vue": "^3.2.31"
   }
 }
