@@ -6,3 +6,7 @@
 .btn__submit{
     height: 10rem;
 }
+.messages{
+    height: 50vh;
+    overflow-y: auto;
+}

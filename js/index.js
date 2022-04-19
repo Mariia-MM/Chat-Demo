@@ -36,6 +36,7 @@ createApp({
             cli
                 .from('Messages')
                 .on('INSERT', payload => {
+                    //adding new message
                     this.messages.push(payload.new);
                 })
                 .subscribe()
@@ -46,4 +47,16 @@ createApp({
         this.downloadMessages();
         this.listenNewMessages();
     },
+    watch:{
+        messages:{
+            handler(newValue,oldValue){
+                 //scroll
+                 this.$nextTick(()=>{
+                    const element = this.$refs.messagesContainer;
+                    element.scrollTo(0,element.scrollHeight);
+                 })
+            },
+            deep: true
+        }
+    }
 }).mount('#app')
