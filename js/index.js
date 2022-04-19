@@ -30,9 +30,20 @@ createApp({
                 ])
                 //clean message
                 this.newMessage='';
+        },
+        listenNewMessages(){
+                        
+            cli
+                .from('Messages')
+                .on('INSERT', payload => {
+                    this.messages.push(payload.new);
+                })
+                .subscribe()
+
         }
     },
     mounted() {
         this.downloadMessages();
+        this.listenNewMessages();
     },
 }).mount('#app')
